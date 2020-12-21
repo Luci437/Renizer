@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    font-family: "Product Sans";
+}
+.cart-main-container {
+    position: relative;
+    width: 98%;
+    height: 96vh;
+    border-radius: 10px;
+    margin: 1% auto;
+    background: #333;
+    overflow: hidden;
+    display: flex;
+}
+.cart-main-container:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/static/images/daria-volkova-BMnX7L9G5xc-unsplash.jpg");
+    background-size: cover;
+    opacity: 0.05;
+    box-shadow: 0 0 100px 100px rgba(0,0,0,0.86) inset;
+}
+.cart-all-box {
+    position: relative;
+    width: 30%;
+    height: 100%;
+    overflow-y: scroll;
+}
+.cart-all-box::-webkit-scrollbar {
+    width: 5px;
+}
+.cart {
+    position: relative;
+    width: 100%;
+}
+.cart-title {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+}
+.cart-img-box {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    overflow: hidden;
+}
+.cart-img {
+    max-width: 100%;
+}
+.cart-name {
+    position: relative;
+    color: #a1a1a1;
+    font-size: 15px;
+}
+.cart-price {
+    color: #5479b7;
+    font-size: 13px;
+}
+.cart-remove {
+    position: absolute;
+    padding: 5px 10px;
+    right: 0;
+    border-radius: 3px;
+    border: none;
+    background: linear-gradient(#ffa086,#ff746f);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10px;
+    top: 0;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.cart-remove:hover {
+    background: linear-gradient(to top,#ffa086,#ff746f);
+    opacity: 1;
+}
+.cart-remove:hover .fa-trash {
+    color: #fff;
+}
+.fa-trash {
+    color: #b6534f;
+}
+.proceed-box {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #2c2c2c;
+    z-index: 2;
+    display: flex;
+}
+.proceed-button {
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: linear-gradient(#ffde44,#ffb83f);
+    color: #a7782b;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+}
+.all-input-box {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.billing-box {
+    width: 30%;
+    position: relative;
+    height: 100%;
+    margin-left: 4%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+}
+.input-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.input-section label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.87);
+}
+.input-box {
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    background: linear-gradient(#ffffff,#f4f4f4);
+}
+.card-box {
+    width: 30%;
+    position: relative;
+    height: 100%;
+    margin-left: 3%;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+}
+.wrapper {
+    position: relative;
+    perspective: 900px;
+    transform-style: preserve-3d;
+}
+.card {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background: #3e3e3e;
+    border-radius: 5px;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+}
+.thankyou-box {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    background: linear-gradient(#ffc162,#ff8b36);
+    border-radius: 5px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    transition: 0.5s ease;
+}
+.card:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    top: 10%;
+    left: 0;
+    height: 50px;
+    background: #353535;
+}
+.card-number {
+    padding: 10px;
+    background: transparent;
+    position: absolute;
+    border: none;
+    top: 40%;
+    width: 70%;
+    color: #c1c1c1;
+}
+.cvv-number {
+    padding: 10px;
+    background: transparent;
+    position: absolute;
+    border: none;
+    top: 40%;
+    right: 1%;
+    width: 20%;
+    color: #c1c1c1;
+}
+.card-owner-name {
+    padding: 10px;
+    background: transparent;
+    position: absolute;
+    border: none;
+    top: 70%;
+    width: 50%;
+    color: #c1c1c1;
+    text-transform: uppercase;
+}
+.exp-date {
+    padding: 10px;
+    background: transparent;
+    position: absolute;
+    border: none;
+    top: 70%;
+    right: 10%;
+    width: 20%;
+    color: #c1c1c1;
+}
+
+.thankyou-box h1 {
+    color: #fff;
+    font-size: 30px;
+}
+.thankyou-box h5 {
+    color: rgba(255,255,255,0.86);
+}
+#main-loader {
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(119,255,147,1),rgba(59,255,134,1));
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#loader {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}

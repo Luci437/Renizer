@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Renizer | Saloon Care</title>
+    <link rel="stylesheet" href="{% static 'css/userstyle.css' %}">
+    <script src="{% static 'js/fontawesome.js' %}"></script>
+</head>
+<body>
+<div class="main-container">
+    <section class="top-part">
+
+    <div class="menu-box">
+        <a href="#" class="site-title">
+            <div class="title-img"></div>
+            RENIZER</a>
+        <div class="all-menus">
+            <a href="{% url 'showstyle' %}" class="menus">Styles</a>
+            <a href="{% url 'product' %}" class="menus">Products</a>
+            <a href="#stylist" class="menus">Stylist</a>
+            <a href="#" class="menus">About Us</a>
+            {% if request.session.user_id %}
+            <a href="{% url 'logout' %}" class="menus join-button">LOGOUT</a>
+            {% else %}
+            <a href="{% url 'login' %}" class="menus join-button">JOIN</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="slider-box">
+        <img src="{% static 'images/slide1.jpg' %}" class="slider-img">
+        <img src="{% static 'images/slide2.jpg' %}" class="slider-img">
+        <img src="{% static 'images/slide3.jpg' %}" class="slider-img">
+        <img src="{% static 'images/slide4.jpg' %}" class="slider-img">
+        <img src="{% static 'images/slide5.jpg' %}" class="slider-img">
+    </div>
+
+    <div class="dialogus-box">
+        <h1>Cut the Style</h1>
+        <p>If you want to create professional and sophisticated looks for your clients as well as offering great value for money, shop online at Renizer for your Salon System Hair Cream today.</p>
+        <a href="#appoint" class="appointment-button"><i class="fas fa-calendar-alt"></i> Make Appointment</a>
+    </div>
+
+    <script type="text/javascript">
+        slideme();
+        function slideme() {
+            let el1 = document.getElementsByClassName('slider-img');
+            let el2 = document.getElementsByClassName('section-bg');
+            let currentimg = 0;
+            let totalimg = el1.length;
+
+            el1[4].style.opacity = '1';
+
+            setInterval(function () {
+                for(let i=0; i<totalimg; i++) {
+                    if(i === currentimg) {
+                        el1[currentimg].style.opacity = '1';
+                        el2[currentimg].style.opacity = '1';
+                    }else {
+                        el1[i].style.opacity = '0';
+                        el2[i].style.opacity = '0';
+                    }
+                }
+                currentimg++;
+                if(currentimg === totalimg) {
+                    currentimg = 0;
+                }
+            },10000)
+        }
+
+        /*document.getElementsByClassName('main-container')[0].onscroll = function () {
+            scrollme();
+        }
+
+        function scrollme() {
+            console.log(document.body.scrollTop,document.documentElement.scrollTop);
+          if (document.documentElement.scrollTop > 400) {
+            document.getElementsByClassName("menu-box")[0].style.position = "fixed";
+            document.getElementsByClassName("menu-box")[0].style.background = "rgba(0,0,0,0.9)";
+            document.getElementsByClassName("menu-box")[0].style.height = "80px";
+          } else {
+            document.getElementsByClassName("menu-box")[0].style.position = "absolute";
+            document.getElementsByClassName("menu-box")[0].style.background = "transparent";
+            document.getElementsByClassName("menu-box")[0].style.height = "100px";
+          }
+        }
+        */
+
+    </script>
+
+    <div class="design-1">
+        <span class="circles"></span>
+        <span class="circles"></span>
+        <span class="year">2009</span>
+        <span class="line"></span>
+        <span class="year">2020</span>
+
+    </div>
+
+</section>
+    <section class="section-2">
+    <img src="{% static 'images/edgar-chaparro-m8UvH75I2lI-unsplash.jpg' %}" class="section-bg">
+    <img src="{% static 'images/neonbrand-ir4FwGZy5Xo-unsplash.jpg' %}" class="section-bg">
+    <img src="{% static 'images/jonathan-weiss-arxAZJT5k2A-unsplash.jpg' %}" class="section-bg">
+    <img src="{% static 'images/john-arano-CCTCHXEsan8-unsplash.jpg' %}" class="section-bg">
+    <img src="{% static 'images/aw-creative-FkAZqQJTbXM-unsplash.jpg' %}" class="section-bg">
+    <span class="text-bundle">
+    <h1 class="section-title">Renizer Products </h1>
+    <h5 class="section-title-about">See some of our products that you can buy. </h5>
+    <a href="{% url 'product' %}" class="appointment-button explore-button"><i class="fas fa-rocket"></i> Start Exploring</a>
+    </span>
+</section>
+
+    <section class="all-artist-box" id="stylist">
+
+        <div class="stylist-details-box">
+            <div class="stylist-box">
+                <img src="{% static 'images/caique-silva-3ujVzg9i2EI-unsplash.jpg' %}" class="stylist-img">
+                <h3 class="stylist-name">Stylist Name</h3>
+            </div>
+            <div class="stylist-box">
+                <img src="{% static 'images/jurica-koletic-7YVZYZeITc8-unsplash.jpg' %}" class="stylist-img">
+                <h3 class="stylist-name">Stylist Name</h3>
+            </div>
+            <div class="stylist-box">
+                <img src="{% static 'images/kareya-saleh-tLKOj6cNwe0-unsplash.jpg' %}" class="stylist-img">
+                <h3 class="stylist-name">Stylist Name</h3>
+            </div>
+        </div>
+        <h1 class="stylist-title">Stylist for You</h1>
+    </section>
+
+    <section class="appointment-box" id="appoint">
+        <span class="blackcover"></span>
+        <div class="appo-title-box">
+            <h1 class="section-title book-title">Book a Seat</h1>
+            <h5 class="section-title-about">Stop waiting in a long queue and make a appointment.</h5>
+            <form method="post" id="booking-form">
+                {% csrf_token %}
+            <table cellspacing="15" style="width: auto;margin-top: 50px;margin-left: 55%;">
+                <tr>
+                    <td colspan="2">
+                        <i class="fas fa-pen input-icons"></i><input type="text" required autocomplete="off" spellcheck="false" id="name" class="bookinputs" placeholder="Your name please">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fas fa-phone input-icons"></i><input type="text" maxlength="10" onkeypress="javascript:return isNumber(event)" minlength="10" required autocomplete="off" id="mobile" spellcheck="false" class="bookinputs" placeholder="Your mobile number" style="width: 166px !important;">
+                    </td>
+                    <td>
+                        <i class="fas fa-calendar-day input-icons"></i><input type="date" id="todaysdate" required autocomplete="off" onchange="sundaycheck()" onclick="sundaycheck()" spellcheck="false" class="bookinputs" placeholder="Choose a date" style="width: 167px !important;">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h5 style="color: rgba(255,255,255,0.4);font-size: 12px;font-weight: lighter;">* We work 12x6 a week, from 9am to 9pm.</h5>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" class="appo-button" onmouseover="sundaycheck()">Make Appointment</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h5 id="appo-error">Renizer</h5>
+                        <h5 id="date-error">Renier</h5>
+                    </td>
+                </tr>
+            </table>
+            </form>
+            <script>
+                function isNumber(evt) {
+                    var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+                    if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+                        return false;
+                    return true;
+                }
+            </script>
+        </div>
+    </section>
+
+</div>
+</body>
+<script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+<script src="{% static 'js/saloonjs.js' %}"></script>
+</html>

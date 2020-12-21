@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Product Sans";
+    outline: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+    height: 100vh;
+}
+.top-menu-box {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+.fa-shopping-bag {
+    position: absolute;
+    font-size: 40px;
+    padding: 30px;
+    right: 0;
+    top: 0;
+    color: #333;
+    margin-right: 10px;
+    transition: 0.2s ease;
+}
+.fa-shopping-bag:hover {
+    text-shadow: 0 20px 20px rgba(0,0,0,0.18);
+}
+.fa-chevron-left {
+    position: relative;
+    font-size: 40px;
+    padding: 20px;
+    color: #333;
+    margin-left: 10px;
+}
+.site-title {
+    position: absolute;
+    left: 50%;
+    font-size: 32px;
+    margin-top: 20px;
+    transform: translateY(-50%);
+}
+.site-title:before {
+    position: absolute;
+    content: '';
+    width: 45px;
+    height: 55px;
+    left: -50px;
+    transform: translateY(-10px);
+    background-image: url("/static/images/black.png");
+    background-size: cover;
+}
+.title-box {
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 10px;
+    background: linear-gradient(to top,rgba(0,0,0,0.9),transparent);
+    padding: 20px;
+    height: 70vh;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.style-slide-img {
+    position: absolute;
+    content: '';
+    width: 100%;
+    top: -15%;
+    left: 0;
+    filter: contrast(100%);
+    z-index: -1;
+    transition: 1s ease-in opacity;
+}
+.main-style-title {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 80px;
+    font-weight: bold;
+    color: #fff;
+}
+.main-title-about {
+    color: rgba(255,255,255,0.58);
+    font-weight: lighter;
+}
+.toggle-gender-box {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    border-radius: 30px;
+    background: linear-gradient(rgba(255,255,255,0.08),rgba(255,255,255,0.04));
+}
+.gender-input {
+    display: none;
+}
+.gender-symbol {
+    padding: 5px 10px;
+    text-shadow: 0 5px 5px rgba(0,0,0,0.79);
+}
+.gender-symbol:hover {
+    background: linear-gradient(rgba(113,92,255,0.79),rgba(113,92,255,0.49));
+}
+.clickedGender {
+    background: linear-gradient(rgba(113,92,255,0.79),rgba(113,92,255,0.49));
+}
+.fa-mars {
+    border-radius: 30px 0px 0px 30px;
+}
+.fa-venus {
+    border-radius: 0px 30px 30px 0px;
+}
+.gender-label {
+    color: #fff;
+    cursor: pointer;
+}
+#result {
+    position: relative;
+    width: 95%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 5% auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2%;
+}
+.style-box {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: #000000;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.hairstyle-img {
+    width: 50%;
+}
+.style-name {
+    position: absolute;
+    color: #fff;
+    bottom: 10px;
+    right: 0;
+    padding: 10px;
+    font-size: 25px;
+    text-align: right;
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.stylecover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right,transparent,rgba(0,0,0,1) 50%);
+}
+.style-category-name {
+    font-weight: lighter;
+    color: rgba(255,255,255,0.35);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
+.search-style-box {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 5px;
+    border-radius: 30px;
+    background: rgba(0,0,0,0.15);
+}
+.search-box {
+    padding: 5px 5px 5px 30px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    background: linear-gradient(#ffffff,#f2f2f2);
+}
+.search-box::placeholder {
+    font-weight: lighter;
+    color: rgba(0,0,0,0.35);
+}
+.fa-search {
+    position: absolute;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 13px;
+    color: rgba(0,0,0,0.8);
+}
+#no-result {
+    color: rgba(0,0,0,0.77);
+    width: 100%;
+    position: relative;
+    text-align: center;
+    padding: 10px 0 20px 0;
+    top: -100px;
+    visibility: hidden;
+}
+#no-result:before {
+    position: absolute;
+    content: 'Styles changes as time changes, my this style too comes.';
+    color: rgba(0,0,0,0.51);
+    font-size: 13px;
+    width: 100%;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    left: 0;
+    bottom: -3px;
+    font-weight: lighter;
+}

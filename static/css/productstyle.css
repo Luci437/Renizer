@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Product Sans";
+    outline: none;
+    text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+    height: 100vh;
+}
+.top-menu-box {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+.fa-shopping-bag {
+    position: absolute;
+    font-size: 40px;
+    padding: 30px;
+    right: 0;
+    top: 0;
+    color: #333;
+    margin-right: 10px;
+    transition: 0.2s ease;
+}
+.fa-shopping-bag:hover {
+    text-shadow: 0 20px 20px rgba(0,0,0,0.18);
+}
+.fa-chevron-left {
+    position: relative;
+    font-size: 40px;
+    padding: 20px;
+    color: #333;
+    margin-left: 10px;
+}
+.site-title {
+    position: absolute;
+    left: 50%;
+    font-size: 32px;
+    margin-top: 20px;
+    transform: translateY(-50%);
+}
+.site-title:before {
+    position: absolute;
+    content: '';
+    width: 45px;
+    height: 55px;
+    left: -50px;
+    transform: translateY(-10px);
+    background-image: url("/static/images/black.png");
+    background-size: cover;
+}
+.root-box {
+    position: relative;
+    width: 100%;
+    padding: 10px 0 10px 50px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.root-box a {
+    color: rgba(0,0,0,0.45);
+    font-size: 12px;
+    padding: 10px;
+}
+.root-box a:hover {
+    text-decoration: underline;
+}
+.product-main-container {
+    width: 98%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    margin: 1% auto;
+}
+.filter-box {
+    position: relative;
+    width: 20%;
+    min-height: 70vh;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(0,0,0,0.05);
+}
+#product-box {
+    position: relative;
+    width: 80%;
+    min-height: 70vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5%;
+}
+.sub-box:hover .product-img {
+    transform: scale(1.05);
+}
+.sub-box {
+    width: 200px;
+    height: 80%;
+    position: relative;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.img-box {
+    width: 100%;
+    height: 70%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: 0.2s ease;
+}
+.product-name {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 0 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.product-category {
+    width: 100%;
+    text-align: center;
+    font-weight: lighter;
+    color: rgba(0,0,0,0.22);
+}
+.cart-button {
+    position: relative;
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 5px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.product-price {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    color: #5ab36c;
+}
+.fa-shopping-cart {
+    padding: 5px 10px 5px 5px;
+}
+.cart-button:hover {
+    background: linear-gradient(#ffbf85,#ff9b69);
+    color: #8d431e;
+}
+.cat-boxs {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+}
+.cat-heading {
+    font-size: 13px;
+    color: rgba(0,0,0,0.53);
+}
+.cat-option {
+    padding: 5px 10px 5px 5px;
+    width: 90%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.options {
+    padding: 10px;
+}
+.product-gender {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 13px;
+    background: rgba(255,73,125,1);
+}
+.search-product-box {
+    position: absolute;
+    right: 1%;
+    top: 0;
+}
+#search-input {
+    border: 1px solid rgba(0,0,0,0.05);
+    padding: 5px 5px 5px 30px;
+    border-radius: 30px;
+}
+.fa-search {
+    position: absolute;
+    padding: 10px;
+    font-size: 12px;
+}
+#cart-no {
+    color: #333;
+    width: 10px;
+    height: 10px;
+    font-size: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    top: -23px;
+    right: 10px;
+}

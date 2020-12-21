@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Style | Renizer</title>
+    <link rel="stylesheet" href="{% static 'css/hairstyle.css' %}">
+    <script src="{% static 'js/fontawesome.js' %}"></script>
+</head>
+<body>
+<div class="top-menu-box">
+    <a href="{% url 'index' %}" title="Home">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <h1 class="site-title">Renizer</h1>
+    <a href="#" title="Your Cart">
+        <i class="fas fa-shopping-bag"></i>
+    </a>
+</div>
+<div class="title-box">
+    <img src="{% static 'images/style bg.jpg' %}" class="style-slide-img">
+    <img src="{% static 'images/men-having-their-haircut-1813272.jpg' %}" class="style-slide-img">
+    <img src="{% static 'images/smiling-man-cutting-another-mans-hair-inside-shop-2061820.jpg' %}" class="style-slide-img">
+    <span class="slide-cover"></span>
+    <div class="search-style-box">
+        <i class="fas fa-search"></i><input type="text" id="search-style" class="search-box" required autocomplete="off" placeholder="Search any Style">
+    </div>
+<h1 class="main-style-title">Styles for You</h1>
+<h5 class="main-title-about">You have a verity of options here, you can choose any from here.</h5>
+    <div class="toggle-gender-box">
+        <form>
+            <input type="radio" id="gender-male" name="gender" value="male" class="gender-input">
+            <label for="gender-male" class="gender-label" title="Male"><i id="male-symbol" class="fas fa-mars gender-symbol"></i></label>
+            <input type="radio" id="gender-female" name="gender" value="female" class="gender-input">
+            <label for="gender-female" class="gender-label" title="Female"><i id="female-symbol" class="fas fa-venus gender-symbol"></i></label>
+        </form>
+    </div>
+</div>
+
+<div id="result">
+    {% for sy in styles %}
+        <div class="style-box">
+        <img src="{{ sy.style_img.url }}" class="hairstyle-img">
+        <span class="stylecover"></span>
+        <h1 class="style-name">{{ sy.style_name }}</h1>
+        <h1 class="style-name"></h1>
+        <h6 class="style-category-name">{{ sy.gender }}</h6>
+    </div>
+    {% endfor %}
+</div>
+
+<h1 id="no-result">Sorry no result</h1>
+
+
+</body>
+<script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+<script src="{% static 'js/style.js' %}"></script>
+</html>

@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: "Product Sans";
+    text-decoration: none;
+}
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-container {
+    position: relative;
+    width: 97%;
+    height: 95vh;
+    background: #23262A;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.top-box {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+.title-name {
+    position: relative;
+    color: #747474;
+    text-transform: lowercase;
+    left: 5%;
+}
+.fa-fish {
+    padding: 10px;
+    background: #424242;
+    color: #fff;
+    text-shadow: 0 10px 10px rgba(0,0,0,0.47);
+    border-radius: 3px;
+    margin-right: 10px;
+}
+.menu-box {
+    position: absolute;
+    padding: 10px;
+    right: 10px;
+}
+.menus {
+    position: relative;
+    padding: 15px 50px;
+    border-radius: 5px;
+    color: #747474;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #333333;
+}
+.menus:hover {
+    background: linear-gradient(-45deg,#F5CA9F,#DDA575);
+    box-shadow: 3px 3px 5px #b5865b inset, -3px -3px 5px #f9d1b2 inset;
+    color: #fff;
+}
+.menus:before {
+    position: absolute;
+    content: '';
+    width: 40%;
+    height: 10px;
+    background: linear-gradient(to bottom,#333,#2d2d2d);
+    top: 0;
+    left: 0;
+    border-radius: 0 0 5px 0;
+}
+.menus:after {
+    position: absolute;
+    content: '';
+    width: 40%;
+    height: 10px;
+    background: linear-gradient(to top,#333,#2d2d2d);
+    right: 0;
+    bottom: 0;
+    border-radius: 5px 0 0 0;
+}
+.menus:hover:before {
+    background: linear-gradient(to top,#b5865b,#DDA575);
+}
+.menus:hover:after {
+    background: linear-gradient(to bottom,#b5865b,#DDA575);
+}
+.right-side-box {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    top: 14%;
+}
+.order-box {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    background: #191c1f;
+    overflow-y: scroll;
+}
+.order-box::-webkit-scrollbar {
+    width: 5px;
+}
+.fish-table {
+    width: 100%;
+}
+.fish-table th {
+    color: #ffdc92;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+.fish-table tr {
+    color: #a3a3a3;
+    padding: 10px;
+}
+.fish-table input {
+    border: none;
+    border-bottom: 1px solid #4a4a4a;
+    background: transparent;
+    color: #fff;
+    font-weight: bold;
+    width: 100px;
+}
+.update-button {
+    position: relative;
+    padding: 15px 50px;
+    border-radius: 5px;
+    color: #747474;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #333333;
+    border: none;
+}
+.update-button:hover {
+    background: linear-gradient(-45deg,#F5CA9F,#DDA575);
+    box-shadow: 3px 3px 5px #b5865b inset, -3px -3px 5px #f9d1b2 inset;
+    color: #fff;
+}
+.update-button:before {
+    position: absolute;
+    content: '';
+    width: 40%;
+    height: 10px;
+    background: linear-gradient(to bottom,#333,#2d2d2d);
+    top: 0;
+    left: 0;
+    border-radius: 0 0 5px 0;
+}
+.update-button:after {
+    position: absolute;
+    content: '';
+    width: 40%;
+    height: 10px;
+    background: linear-gradient(to top,#333,#2d2d2d);
+    right: 0;
+    bottom: 0;
+    border-radius: 5px 0 0 0;
+}
+.update-button:hover:before {
+    background: linear-gradient(to top,#b5865b,#DDA575);
+}
+.update-button:hover:after {
+    background: linear-gradient(to bottom,#b5865b,#DDA575);
+}
+.fish-img-box {
+    position: relative;
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.fish-img {
+    width: 100%;
+}
+.add-box {
+    position: relative;
+    width: 100%;
+    height: 38vh;
+    background: #191C1F;
+    margin-bottom: 10px;
+}
+.fish-add-table {
+    width: 50%;
+}
+.input-box {
+    position: relative;
+}
+.fish-inputs {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 1px solid #4a4a4a;
+}
+.fish-label {
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
+    color: rgba(255,255,255,0.76);
+    font-size: 13px;
+    transition: 0.2s ease;
+}
+.fish-inputs:focus + .fish-label {
+    font-size: 10px;
+    top: -10px;
+    left: 0;
+}
+.fish-inputs:valid + .fish-label {
+    font-size: 10px;
+    top: -10px;
+    left: 0;
+}
+.uploded-img {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    width: 40%;
+    border-radius: 5px;
+}
+.left-side-box {
+    position: relative;
+    width: 46%;
+    height: 79.5vh;
+    left: 20px;
+    top: -12px;
+}
+.all-info-box {
+    width: 100%;
+    position: relative;
+    height: 48%;
+    background: #191C1F;
+    margin-bottom: 2%;
+    overflow-y: scroll;
+}
+.all-info-box::-webkit-scrollbar {
+    width: 5px;
+}
+.booking-box {
+    width: 100%;
+    position: relative;
+    height: 50%;
+    background: #191C1F;
+    overflow-y: scroll;
+}
+.booking-box::-webkit-scrollbar {
+    width: 5px;
+}
+.status-option {
+    padding: 5px 20px !important;
+}
+.status-option option {
+    color: #000;
+}
+.status-option option:checked {
+    background: #30da70;
+}
+.sub-box-info {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #2e2e2e;
+    background: linear-gradient(#2e2e2e,#3f3f3f,#252525,#0f0f0f);
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.sub-box-info:nth-child(1) {
+    animation: glow 7s 0.9s infinite linear alternate;
+}
+.sub-box-info:nth-child(2) {
+    animation: glow 7s 1.9s infinite linear alternate;
+}
+.sub-box-info:nth-child(3) {
+    animation: glow 7s 2s infinite linear alternate;
+}
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 0px #30da70;
+    }
+    50% {
+        box-shadow: 0 0 10px #30da70;
+    }
+    100% {
+        box-shadow: 0 0 30px #30da70;
+    }
+}
+.sub-box-info h1 {
+    font-size: 80px;
+    text-shadow: 0 30px 30px rgba(0,0,0,0.88);
+    z-index: 3;
+}
+.turnover {
+    font-size: 17px !important;
+    padding-bottom: 75px;
+    position: relative;
+    top: 50px;
+}
+.booking-table {
+    width: 100%;
+}
+.booking-table th {
+    color: #ffdc92;
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 12px;
+}
+.attend-button {
+    padding: 5px 10px;
+    background: #323232;
+    color: #626262;
+    transition: 0.2s ease;
+}
+.attend-button:hover {
+    background: #658bc7;
+    color: #fff;
+}

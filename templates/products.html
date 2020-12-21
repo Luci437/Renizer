@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Products | Renizer</title>
+    <link rel="stylesheet" href="{% static 'css/productstyle.css' %}">
+    <script src="{% static 'js/fontawesome.js' %}"></script>
+</head>
+<body>
+
+{% if request.session.user_id %}
+    <h1 hidden id="login-status">online</h1>
+{% else %}
+    <h1 hidden id="login-status">offline</h1>
+{% endif %}
+<div class="top-menu-box">
+    <a href="{% url 'index' %}" title="Home">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <h1 class="site-title">Renizer</h1>
+    <a href="{% url 'carts' %}" title="Your Cart">
+        <i class="fas fa-shopping-bag">{% if cartcount %}<span id="cart-no">{{ cartcount }}</span>{% endif %}</i>
+    </a>
+</div>
+
+<div class="root-box">
+    <a href="#">Renizer</a>><a href="#">Products</a>
+    <div class="search-product-box">
+        <i class="fas fa-search"></i><input id="search-input" required autocomplete="off" placeholder="Search any style item">
+    </div>
+
+</div>
+
+<div class="product-main-container">
+    <div class="filter-box">
+
+        <div id="cat-box" class="cat-boxs">
+            <h4 class="cat-heading">SORT BY</h4>
+            <select class="cat-option" id="sortoption">
+                <option class="options">Low to High</option>
+                <option class="options">High to Low</option>
+                <option class="options">Gender(Male)</option>
+                <option class="options">Gender(Female)</option>
+            </select>
+        </div>
+
+        <div class="cat-boxs">
+            <h4 class="cat-heading">CATEGORY</h4>
+            <select class="cat-option" id="categoryoption">
+                <option class="options" disabled selected>--select category--</option>
+                {% for cat in cats %}
+                    <option class="options">{{ cat.category_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+    </div>
+    <div id="product-box">
+        {% for product in products %}
+        <div class="sub-box">
+            <div class="img-box">
+                <img src="{{ product.product_img.url }}" class="product-img">
+            </div>
+            <span class="product-gender">{{ product.product_gender }}</span>
+            <h1 class="product-name">{{ product.product_name }}</h1>
+            <h5 class="product-category">{{ product.category.category_name }}</h5>
+            <h3 class="product-price">${{ product.product_price }}</h3>
+            <button class="cart-button" value="{{ product.id }}"><i class="fas fa-shopping-cart"></i>Add to Cart</button>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+<script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+<script src="{% static 'js/product.js' %}"></script>
+</html>
